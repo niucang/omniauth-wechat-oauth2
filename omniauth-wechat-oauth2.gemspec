@@ -13,8 +13,8 @@ Gem::Specification.new do |s|
   s.required_ruby_version     = '>= 1.9.3'
   s.required_rubygems_version = '>= 1.8.23'
 
-  s.author       = 'Skinnyworm, yangsr'
-  s.email        = 'askinnyworm@gmail.com, ysr1023@foxmail.com'
+  s.author       = 'Chang.liu'
+  s.email        = '1402703522@qq.com'
 
   s.add_dependency 'omniauth', '~> 1.0'
   s.add_dependency 'omniauth-oauth2', '~> 1.0'
