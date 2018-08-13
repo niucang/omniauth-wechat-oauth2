@@ -19,6 +19,8 @@ module OmniAuth
 
       option :token_params, {parse: :json}
 
+      option :raw_info_params, {lang: 'zh_CN'}
+
       # These are called after authentication has succeeded. If
       # possible, you should try to set the UID without making
       # additional calls (if the user id is returned with the token
@@ -52,7 +54,7 @@ module OmniAuth
         @uid ||= access_token["openid"]
         @raw_info ||= begin
           access_token.options[:mode] = :query
-          response = access_token.get("/sns/userinfo", :params => {"openid" => @uid}, parse: :text)
+          response = access_token.get("/sns/userinfo", :params => raw_info_params.merge({"openid" => @uid}), parse: :text)
           @raw_info = JSON.parse(response.body.gsub(/[\u0000-\u001f]+/, ''))
         end
       end
